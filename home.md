@@ -1,13 +1,5 @@
 # Racket-MUD
 
-#lang scribble/manual
-
-@title{Racket-MUD}
-
-@author[(author+email "emsenn" "emsenn@emsenn.net")]
-
-@defmodule[racket-mud]
-
 ***NOTE:*** *A lot of the documentation right now talks about things that will be a part of Racket-MUD version 0.1.0 as though they exist. I didn't wanna have to go back and rewrite a bunch of "will" to "is".*
 
 Racket-MUD is a Racket package containing a *MUD engine* written by [emsenn](who/emsenn) and released for the benefit of the commons. It is currently in earliest alpha.
