@@ -16,3 +16,5 @@
 # MUD Files
 user-accounts.rktd
 talker-log.rktd
+data/logs/
+data/records/evm/
