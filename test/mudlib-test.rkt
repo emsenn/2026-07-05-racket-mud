@@ -153,4 +153,3 @@
   (server-schedule! s (make-message 'x 'logical-tick #:payload (lambda () 1)))
   (server-step! s)
   (check-true (world? (server-step! s)))))
-

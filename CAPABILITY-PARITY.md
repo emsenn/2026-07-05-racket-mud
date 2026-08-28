@@ -28,4 +28,3 @@ is exactly-once, and TCP never owns or mutates world state.
 
 World-specific Teraum content and the qtOps and TAB engines are intentionally
 outside the parity boundary.
-

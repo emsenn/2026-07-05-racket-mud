@@ -593,4 +593,3 @@
     (make-handler 'logical-tick tick))))
 
 (define make-standard-library standard-mud-library)
-
