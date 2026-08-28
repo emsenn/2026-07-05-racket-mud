@@ -20,6 +20,30 @@ these commands.
 `CAPABILITY-PARITY.md` maps the recovered engines' behavior to executable
 replacement evidence.
 
+## Install from GitHub
+
+Until the package is registered in the Racket catalog, install the published
+repository directly:
+
+```console
+raco pkg install --auto https://github.com/red-cup-engineering/racket-mud.git
+```
+
+For a development checkout, run `raco pkg install` from this directory to link
+it locally. The package exposes the `racket-mud` collection; see
+`scribblings/racket-mud.scrbl` for the public API.
+
+### Migration note
+
+This is a new 0.x package, not a drop-in continuation of the historical
+Racket-MUD trees. Historical closure/object APIs, global queues, direct port
+I/O control results, and Teraum/TAB/qtOps world data are intentionally absent.
+Use immutable `world` values, `mud-message` routing, `mud-library` handlers,
+and adapters instead. Treat every historical integration as a migration.
+
+Planned catalog tags: `games`, `networking`, and `mud`. The source repository
+is [red-cup-engineering/racket-mud](https://github.com/red-cup-engineering/racket-mud).
+
 ## Boundaries
 
 This is neither TAB/qtOps nor Teraum. TAB is a separate Fennel engine; qtOps
