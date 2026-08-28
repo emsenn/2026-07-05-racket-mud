@@ -19,7 +19,7 @@ jobs:
           variant: CS
           version: ${{ matrix.racket-version }}
       - name: Install package
-        run: raco pkg install --batch --auto --name racket-mud .
+        run: raco pkg install --batch --auto --name racket-mud "$GITHUB_WORKSPACE"
       - name: Check declared dependencies
         run: raco setup --check-pkg-deps --unused-pkg-deps racket-mud
       - name: Test installed package
