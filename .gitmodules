@@ -1,6 +1,0 @@
-[submodule "teraum"]
-	path = teraum
-	url = https://gitlab.com/emsenn/teraum
-[submodule "apps/teraum"]
-	path = apps/teraum
-	url = https://github.com/red-cup-engineering/racket-mud-teraum.git

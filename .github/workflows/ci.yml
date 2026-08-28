@@ -1,0 +1,28 @@
+name: Racket CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        racket-version: [stable, current]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Bogdanp/setup-racket@v1.15
+        with:
+          architecture: x64
+          distribution: full
+          variant: CS
+          version: ${{ matrix.racket-version }}
+      - name: Install package
+        run: raco pkg install --batch --auto --name racket-mud .
+      - name: Check declared dependencies
+        run: raco setup --check-pkg-deps --unused-pkg-deps racket-mud
+      - name: Test installed package
+        run: raco test -p racket-mud
+      - name: Build documentation
+        run: raco scribble --htmls --dest doc scribblings/racket-mud.scrbl

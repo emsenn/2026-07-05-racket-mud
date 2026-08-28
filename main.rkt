@@ -1,19 +1,18 @@
-#lang racket
+#lang racket/base
 
-(require "accounts.rkt"
-         "actions.rkt"
-         "engine.rkt"
-         "mudmap.rkt"
-         "mudsocket.rkt"
-         "talker.rkt"
-         "./teraum/main.rkt")
+;; The intentionally small public surface of the revived engine.
+(require "engine/model.rkt"
+         "engine/library.rkt"
+         "engine/server.rkt"
+         "mudlib/main.rkt"
+         "adapters/accounts.rkt"
+         "adapters/login.rkt"
+         "adapters/tcp-line-server.rkt")
 
-(define teraum
-  (run-engine
-   (make-engine
-    "Teraum"
-    (list (accounts)
-          (actions)
-          (mudmap teraum-map)
-          (mudsocket)
-          (talker)))))
+(provide (all-from-out "engine/model.rkt"
+                       "engine/library.rkt"
+                       "engine/server.rkt"
+                       "mudlib/main.rkt"
+                       "adapters/accounts.rkt"
+                       "adapters/login.rkt"
+                       "adapters/tcp-line-server.rkt"))

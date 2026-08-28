@@ -1,20 +1,4 @@
-*~
-\#*\#
-
-*.rkt~
-*.rkt.bak
-\#*.rkt#
-\#*.rkt#*#
-
-# Compiled racket bytecode
-**/compiled
-*.zo
-
-# Dependency tracking files
-*.dep
-
-# MUD Files
-user-accounts.rktd
-talker-log.rktd
-data/logs/
-data/records/evm/
+compiled/
+**/compiled/
+doc/
+*.rktd
